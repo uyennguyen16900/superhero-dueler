@@ -250,7 +250,7 @@ class Team(object):
         # member of the team to the screen.
         # This data must be output to the console.
         for hero in self.heroes:
-             print(f"{hero.name} has a kills/deaths ratio of {hero.kills / hero.deaths}.")
+             print(f"{hero.name} has a kills/deaths ratio of {hero.kills} / {hero.deaths}.")
 
 class Arena:
     def __init__(self):
@@ -399,7 +399,7 @@ class Arena:
                     print(f" - {hero.name}")
                 sum_kills += hero.kills
                 sum_deaths += hero.deaths
-            print(f"The average kill/death ratio of {self.team_one.name} is {sum_kills} / {sum_deaths}")
+            print(f"The kill/death ratio of {self.team_one.name} is {sum_kills} / {sum_deaths}")
 
         if self.winning_team == self.team_two.name:
             for hero in self.team_two.heroes:
@@ -407,7 +407,7 @@ class Arena:
                     print(f" - {hero.name}")
                 sum_kills += hero.kills
                 sum_deaths += hero.deaths
-            print(f"The average kill/death ratio of {self.team_two.name} is {sum_kills} / {sum_deaths}")
+            print(f"The kill/death ratio of {self.team_two.name} is {sum_kills} / {sum_deaths}")
 
 if __name__ == "__main__":
     # hero1 = Hero("Wonder Woman")
@@ -454,7 +454,7 @@ if __name__ == "__main__":
 
         #Check for Player Input
         if play_again.lower() == "n":
-            game_is_running = False
+            battling = False
 
         else:
             #Revive heroes to play again
