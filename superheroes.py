@@ -373,6 +373,41 @@ class Arena:
                     self.team_two.add_hero(self.create_hero())
                 break
 
+    def team_battle(self):
+        '''Battle team_one and team_two together.'''
+        # This method should battle the teams together.
+        # Call the attack method that exists in your team objects
+        # for that battle functionality.
+        self.winning_team = self.team_one.attack(self.team_two)
+
+    def show_stats(self):
+        '''Prints team statistics to terminal.'''
+        # This method should print out battle statistics
+        # including each team's average kill/death ratio.
+        # Required Stats:
+        #     Declare winning team
+        #     Show both teams average kill/death ratio.
+        #     Show surviving heroes.
+        sum_kills = 0
+        sum_deaths = 0
+        print(f"The winning team is {self.winning_team}")
+        print(f"Surviving heroes in {self.winning_team}: ")
+
+        if self.winning_team == self.team_one.name:
+            for hero in self.team_one.heroes:
+                if hero.is_alive():
+                    print(f" - {hero.name}")
+                sum_kills += hero.kills
+                sum_deaths += hero.deaths
+            print(f"The average kill/death ratio of {self.team_one.name} is {sum_kills} / {sum_deaths}")
+
+        if self.winning_team == self.team_two.name:
+            for hero in self.team_two.heroes:
+                if hero.is_alive():
+                    print(f" - {hero.name}")
+                sum_kills += hero.kills
+                sum_deaths += hero.deaths
+            print(f"The average kill/death ratio of {self.team_two.name} is {sum_kills} / {sum_deaths}")
 
 if __name__ == "__main__":
     # hero1 = Hero("Wonder Woman")
