@@ -444,10 +444,10 @@ if __name__ == "__main__":
     # Instantiate Game Arena
     arena = Arena()
 
-    arena.build_team_one()
-    arena.build_team_two()
 
     while battling:
+        arena.build_team_one()
+        arena.build_team_two()
         arena.team_battle()
         arena.show_stats()
         play_again = input("Play Again? Y or N: ").lower()
