@@ -337,6 +337,43 @@ class Arena:
 
         return hero
 
+    def build_team_one(self):
+        '''Prompt the user to build team_one '''
+        # This method should allow a user to create team one.
+        # Prompt the user for the number of Heroes on team one
+        # call self.create_hero() for every hero that the user wants to add to team one.
+        # Add the created hero to team one.
+        while True:
+            try:
+                team_name = input("Enter team 1 name: ")
+                self.team_one = Team(team_name)
+                heroes_num = int(input("Enter the number of heroes on team one: "))
+            except ValueError:
+                print("That's not a number.")
+            else:
+                for i in range(int(heroes_num)):
+                    self.team_one.add_hero(self.create_hero())
+                break
+
+    def build_team_two(self):
+        '''Prompt the user to build team_two'''
+        # This method should allow a user to create team two.
+        # Prompt the user for the number of Heroes on team two
+        # call self.create_hero() for every hero that the user wants to add to team two.
+        # Add the created hero to team two.
+        while True:
+            try:
+                team_name = input("Enter team 2 name: ")
+                self.team_two = Team(team_name)
+                heroes_num = int(input("Enter the number of heroes on team two: "))
+            except ValueError:
+                print("That's not a number.")
+            else:
+                for i in range(heroes_num):
+                    self.team_two.add_hero(self.create_hero())
+                break
+
+
 if __name__ == "__main__":
     # hero1 = Hero("Wonder Woman")
     # hero2 = Hero("Dumbledore")
