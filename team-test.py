@@ -322,14 +322,14 @@ def test_hero_equip_armor():
     assert jodie.armors[0].name == "Gauntlets"
 
 
-# def test_hero_defend_multi_armor():
-#     jodie = superheroes.Hero("Jodie Foster")
-#     gauntlets = superheroes.Armor("Gauntlets", 4000)
-#     science = superheroes.Armor("Science", 9000)
-#     jodie.add_armor(gauntlets)
-#     jodie.add_armor(science)
-#     defend = jodie.defend()
-#     assert defend <= 13000 and defend >= 0
+def test_hero_defend_multi_armor():
+    jodie = superheroes.Hero("Jodie Foster")
+    gauntlets = superheroes.Armor("Gauntlets", 4000)
+    science = superheroes.Armor("Science", 9000)
+    jodie.add_armor(gauntlets)
+    jodie.add_armor(science)
+    defend = jodie.defend()
+    assert defend <= 13000 and defend >= 0
 
 
 # Test Team
